@@ -7,10 +7,12 @@ int PlyStnRStickLtRt = 0;
 int PlyStnLStickUpDn = 0;
 int StrServoSetting = 90; //Setting for the Steering Servo
 int in1 = 9; //Declaring the pins where in1 in2 from the driver are wired 
-int in2 = 8; //here they are wired with D9 and D8 from Arduino
+int in2 = 6; //here they are wired with D9 and D8 from Arduino
 int dir = 0;
 int vel = 0;
 int count = 0;
+int in1Steer = 13;
+int in2Steer = 2;
 
 Servo SteeringServo;
 /******************************************************************
@@ -222,6 +224,15 @@ void loop() {
   PlyStnRStickLtRt = ps2x.Analog(PSS_RX); 
   StrServoSetting = map(PlyStnRStickLtRt,0,255,30,150);
   SteeringServo.write(StrServoSetting);
+  if (PlyStnRStickLtRt < 100)
+  {  digitalWrite(in1Steer,HIGH);
+  digitalWrite(in2Steer, LOW);}
+  else  if (PlyStnRStickLtRt > 200)
+  {  digitalWrite(in1Steer,LOW);
+  digitalWrite(in2Steer, HIGH);}
+  else 
+  {  digitalWrite(in1Steer,LOW);
+  digitalWrite(in2Steer, LOW);}
   PlyStnLStickUpDn = ps2x.Analog(PSS_LY);
   dir = map(PlyStnLStickUpDn,0,255,-255,255);
   if(count > 30)
