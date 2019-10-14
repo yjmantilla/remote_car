@@ -5,6 +5,7 @@
 int servoPin = 3; 
 int PlyStnRStickLtRt = 0;
 int PlyStnLStickUpDn = 0;
+int PlyStnRStickUpDn = 0;
 int StrServoSetting = 90; //Setting for the Steering Servo
 int in1 = 9; //Declaring the pins where in1 in2 from the driver are wired 
 int in2 = 6; //here they are wired with D9 and D8 from Arduino
@@ -242,8 +243,8 @@ void loop() {
 
     count = 0;
   }
-    if (dir < -10){Serial.println("Forward");goForward(abs(dir));}
-  else if (dir > 10){Serial.println("Backward");goBackward(abs(dir));}
+    if (dir < -5){Serial.println("Forward");goForward(abs(dir));}
+  else if (dir > 5){Serial.println("Backward");goBackward(abs(dir));}
   else {Serial.println("Stop");goNowhere();}
 
   delay(50);
