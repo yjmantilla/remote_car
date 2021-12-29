@@ -5,11 +5,18 @@
 //int servoPin = 3; 
 int PlyStnRStickLtRt = 0;
 int PlyStnLStickUpDn = 0;
+<<<<<<< HEAD
 //int StrServoSetting = 90; //Setting for the Steering Servo
 
 // For Forward/Backward H bridge in1, in2 
 #define in1 10 //Declaring the pins where in1 in2 from the driver are wired 
 #define in2 11 //here they are wired with D9 and D8 from Arduino
+=======
+int PlyStnRStickUpDn = 0;
+int StrServoSetting = 90; //Setting for the Steering Servo
+int in1 = 9; //Declaring the pins where in1 in2 from the driver are wired 
+int in2 = 6; //here they are wired with D9 and D8 from Arduino
+>>>>>>> f51e0183be5cfae11b5089f7c1ccc3ce9fa8980c
 int dir = 0;
 int vel = 0;
 int count = 0;
@@ -250,11 +257,17 @@ void loop() {
 
     count = 0;
   }
+<<<<<<< HEAD
     if (dir < -10){Serial.println("↑");goForward(abs(dir));}
   else if (dir > 10){Serial.println("↓");goBackward(abs(dir));}
   else {
     //Serial.println("Stop");
     goNowhere();}
+=======
+    if (dir < -5){Serial.println("Forward");goForward(abs(dir));}
+  else if (dir > 5){Serial.println("Backward");goBackward(abs(dir));}
+  else {Serial.println("Stop");goNowhere();}
+>>>>>>> f51e0183be5cfae11b5089f7c1ccc3ce9fa8980c
 
   delay(50);
   count++;
