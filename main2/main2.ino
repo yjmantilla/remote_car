@@ -8,13 +8,13 @@ int PlyStnLStickUpDn = 0;
 //int StrServoSetting = 90; //Setting for the Steering Servo
 
 // For Forward/Backward H bridge in1, in2 
-#define in1 10 //Declaring the pins where in1 in2 from the driver are wired 
-#define in2 11 //here they are wired with D9 and D8 from Arduino
+int in1 = 10; //Declaring the pins where in1 in2 from the driver are wired 
+int in2 = 11; //here they are wired with D9 and D8 from Arduino
 int dir = 0;
 int vel = 0;
 int count = 0;
-#define in1Steer 8
-#define in2Steer 9
+int in1Steer = 8;
+int in2Steer = 9;
 
 //Servo SteeringServo;
 /******************************************************************
@@ -23,12 +23,12 @@ int count = 0;
  *   - 2e colmun: Stef?
  * replace pin numbers by the ones you use
  ******************************************************************/
-#define PS2_DAT        4  //14    
-#define PS2_CMD        5 //15
-#define PS2_SEL        6  //16 //Attention???
-#define PS2_CLK        7  //17
+#define PS2_DAT        2  //14    
+#define PS2_CMD        3 //15
+#define PS2_SEL        4  //16 //Attention???
+#define PS2_CLK        5  //17
 
-/******************************************************************
+/****************nnnnnnnnnnnnf                                                                                                                                                              **************************************************
  * select modes of PS2 controller:
  *   - pressures = analog reading of push-butttons 
  *   - rumble    = motor rumbling
@@ -61,7 +61,7 @@ void setup(){
   delay(300);  //added delay to give wireless ps2 module some time to startup, before configuring it
    
   //CHANGES for v1.6 HERE!!! **************PAY ATTENTION*************
-  
+  0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   //setup pins and settings: GamePad(clock, command, attention, data, Pressures?, Rumble?) check for error
   error = ps2x.config_gamepad(PS2_CLK, PS2_CMD, PS2_SEL, PS2_DAT, pressures, rumble);
   

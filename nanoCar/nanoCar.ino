@@ -68,15 +68,15 @@ void setup(){
   if(error == 0){
     Serial.print("Found Controller, configured successful ");
     Serial.print("pressures = ");
-	if (pressures)
-	  Serial.println("true ");
-	else
-	  Serial.println("false");
-	Serial.print("rumble = ");
-	if (rumble)
-	  Serial.println("true)");
-	else
-	  Serial.println("false");
+  if (pressures)
+    Serial.println("true ");
+  else
+    Serial.println("false");
+  Serial.print("rumble = ");
+  if (rumble)
+    Serial.println("true)");
+  else
+    Serial.println("false");
     Serial.println("Try out all the buttons, X will vibrate the controller, faster as you press harder;");
     Serial.println("holding L1 or R1 will print out the analog stick values.");
     Serial.println("Note: Go to www.billporter.info for updates and to report bugs.");
@@ -103,7 +103,7 @@ void setup(){
     case 2:
       Serial.print("GuitarHero Controller found ");
       break;
-	case 3:
+  case 3:
       Serial.print("Wireless Sony DualShock Controller found ");
       break;
    }
@@ -229,12 +229,12 @@ void loop() {
   //StrServoSetting = map(PlyStnRStickLtRt,0,255,30,150);
   //SteeringServo.write(StrServoSetting);
   if (PlyStnRStickLtRt < 100)
-  { Serial.println("→"); 
+  { Serial.println("←"); 
     digitalWrite(in1Steer,HIGH);
   digitalWrite(in2Steer, LOW);}
   else  if (PlyStnRStickLtRt > 160)
   { 
-    Serial.println("←");
+    Serial.println("→");
     digitalWrite(in2Steer, HIGH); 
     digitalWrite(in1Steer,LOW);
   }
